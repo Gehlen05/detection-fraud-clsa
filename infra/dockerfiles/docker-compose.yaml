@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  api-ia:
+      build:
+        context: ../../
+        dockerfile: infra/dockerfiles/Dockerfile.local
+      image: api-clsa-docker
+      container_name: api-clsa-docker
+      ports: 
+        - "5100:5100"
