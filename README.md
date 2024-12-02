@@ -16,7 +16,7 @@ Todo projeto foi desenvolvido em ambiente linux.
 ### 2.1- Análise exploratória e Modelagem:
 Dentro da pasta   contém a análise exploratória e modelagem do desafio, tanto com os ypnb(feito no JUPYTER NOTEBOOK), PDF e html(abrir no browser) para leitura e as explicações.\
 Na modelagem utilizo a metodologia CRISP-DM(Processo Padrão Inter-Indústrias para Mineração de Dados), que é interessante
-pois é o trânsito entre as etapas, na qual vai avançando e retrocedendo conforme os resultados e teste de mais possibilidades.
+pois é o trânsito entre as etapas, na qual vai avançando e retrocedendo conforme os resultados e teste de mais possibilidades.\
 ![Metodologia utilizada na modelagem](modelagem/479px-CRISP-DM_Process_Diagram.png)\
 Fonte: Wikipédia
 
