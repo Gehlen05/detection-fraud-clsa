@@ -1,5 +1,5 @@
 from flask import Request
-from .logger import successmessage, errormessage
+from .logger import success_message, error_message
 import pickle
 import pandas as pd
 import configparser
@@ -9,12 +9,12 @@ def carregar_modelo(aplicacao_modelo):
     modelo = {'deteccao-fraude': 'modelo_regressao_v0112.pkl'}
     if modelo[aplicacao_modelo]:
         if aplicacao_modelo == 'deteccao-fraude':
-            successmessage(f'Encontrado modelo: {modelo[aplicacao_modelo]}')
+            success_message(f'Encontrado modelo: {modelo[aplicacao_modelo]}')
             with open(f'./src/api/v1/modelos/{modelo[aplicacao_modelo]}', 'rb') as arquivo:
                 modelo_carregado = pickle.load(arquivo)
-                successmessage(f'Modelo {aplicacao_modelo} carregado com sucesso')
+                success_message(f'Modelo {aplicacao_modelo} carregado com sucesso')
     else:
-        errormessage('Modelo de aplicacao não encontrado')
+        error_message('Modelo de aplicacao não encontrado')
 
     return modelo_carregado
 
@@ -34,7 +34,7 @@ def check_is_empty(request: Request) -> bool:
         return True
 
 def montar_dataframe(requisicao):
-    successmessage('Inicianco criação dataframe')
+    success_message('Inicianco criação dataframe')
     return pd.DataFrame(requisicao)
 
 def carregar_treshold(nome_arquivo, seccao, treshold_atual):
@@ -42,5 +42,5 @@ def carregar_treshold(nome_arquivo, seccao, treshold_atual):
     config.read(nome_arquivo)
     if seccao in config and treshold_atual in config[seccao]:
         valor = float(config.get(seccao, treshold_atual))
-        successmessage(f'Treshold = {valor}')
+        success_message(f'Treshold = {valor}')
         return valor

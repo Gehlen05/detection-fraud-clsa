@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY ./src /app/src
 COPY ./infra/libs /app/infra/libs
+COPY swagger.yml /app/swagger.yml
+
 
 RUN python -m venv /app/venv
 RUN /app/venv/bin/python -m pip install -r /app/infra/libs/requirements.txt

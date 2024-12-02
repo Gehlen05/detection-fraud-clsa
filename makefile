@@ -20,3 +20,7 @@ gen:
 
 runcontainer:
 	docker run api-clsa-docker
+
+.PHONY: tests
+tests:
+	PYTHONPATH=src pytest -v

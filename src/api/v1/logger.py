@@ -9,12 +9,12 @@ def terminalcolor(estilo, cor):
     return padrao,  base
 
 
-def errormessage(message):
+def error_message(message):
     red,  base = terminalcolor(1,  2)
     print(f"{red}{message}{base}\n")
 
 
-def successmessage(message):
+def success_message(message):
     green, base = terminalcolor(0,  3)
     print(f"✅{green}{message}{base}")
 

@@ -109,17 +109,21 @@ No projeto há um arquivo chamado makefile com execuções definidas. Todas exec
 
     make venv
 
-2- Definir interpretador python 3.10
+2- Ativar venv
+
+    source .venv/bin/activate
+
+3- Definir interpretador python 3.10
 		
-3- Instalar requirements
+4- Instalar requirements
     
     make init
 			
-4- Executar o projeto estand dentro de Alexsadro_Gehlen
+5- Executar o projeto estand dentro de Alexsadro_Gehlen
 
     make run
 			
-5- Json de entrada:
+6- Json de entrada:
 Para a inferência foi optado por enviar o caminho da imagem "simulando" o acesso a um banco de dados.
 Ao executar o passo anterior no terminal irá mostrar o endereço ip, com isso é possível acessar a rota do serviço.
 Utilizei o Insomnia para realizar as requisições.  
@@ -173,7 +177,7 @@ O primeiro campo é id_transacao que é para garantir o resultado da classifica�
     ]
 
 					
-6-	Retorno Json:	
+7-	Retorno Json:	
 
     [
         {
@@ -184,3 +188,5 @@ O primeiro campo é id_transacao que é para garantir o resultado da classifica�
         }
     ]    
 
+![Metodologia utilizada na modelagem](modelagem/api-clearsale.png)\
+![Metodologia utilizada na modelagem](modelagem/servico_api.drawio.png)\
