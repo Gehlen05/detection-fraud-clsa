@@ -16,7 +16,6 @@ def deteccao_transacao_fraudulenta(modelo, df, treshold):
     """
     success_message('Inicianco predição pentavalente')
     df = df.fillna(0)
-    a = df.iloc[:, 1:]
     resultados = df.iloc[:, 1:].apply(lambda linha: _definir_fraude(linha, modelo, treshold), axis=1)
     df['probabilidade'], df['fraude'] = zip(*resultados)
     return df
@@ -35,7 +34,7 @@ def _definir_fraude(linha, modelo, treshold):
        """
     vetor = linha.values.reshape(1, -1)
     probabilidade = modelo.predict_proba(vetor)[:, 1]
-    fraude = '1' if probabilidade > treshold else '0'
+    fraude = '1' if probabilidade[0] > treshold else '0'
     return  probabilidade[0], fraude
 
 
