@@ -1,0 +1,161 @@
+swagger: '2.0'
+info:
+  title: API de Detecção de Fraude
+  version: "1.0"
+paths:
+  /inteligencia-artificial/deteccao-fraude:
+    post:
+      summary: Detecção de fraude em transações financeiras
+      consumes:
+        - application/json
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              id_transacao:
+                type: integer
+                description: ID da transação
+                example: 456
+              amt:
+                type: number
+                format: float
+                description: Valor da transação
+                example: 3.933589
+              category_entertainment:
+                type: integer
+                description: Categoria de entretenimento
+                example: 0
+              category_gas_transport:
+                type: integer
+                description: Categoria de transporte de gás
+                example: 0
+              category_grocery_pos:
+                type: integer
+                description: Categoria de supermercado POS
+                example: 0
+              category_home:
+                type: integer
+                description: Categoria de casa
+                example: 0
+              category_kids_pets:
+                type: integer
+                description: Categoria de crianças/pets
+                example: 0
+              category_misc_net:
+                type: integer
+                description: Categoria misc. online
+                example: 0
+              category_shopping_net:
+                type: integer
+                description: Categoria de compras online
+                example: 0
+              category_shopping_pos:
+                type: integer
+                description: Categoria de compras POS
+                example: 0
+              category_travel:
+                type: integer
+                description: Categoria de viagens
+                example: 0
+              transaction_month_1:
+                type: integer
+                description: Transação no mês 1
+                example: 1
+              transaction_month_2:
+                type: integer
+                description: Transação no mês 2
+                example: 0
+              transaction_month_3:
+                type: integer
+                description: Transação no mês 3
+                example: 0
+              transaction_month_4:
+                type: integer
+                description: Transação no mês 4
+                example: 0
+              transaction_month_5:
+                type: integer
+                description: Transação no mês 5
+                example: 0
+              transaction_month_6:
+                type: integer
+                description: Transação no mês 6
+                example: 0
+              transaction_month_7:
+                type: integer
+                description: Transação no mês 7
+                example: 0
+              transaction_month_8:
+                type: integer
+                description: Transação no mês 8
+                example: 0
+              transaction_month_9:
+                type: integer
+                description: Transação no mês 9
+                example: 0
+              transaction_month_10:
+                type: integer
+                description: Transação no mês 10
+                example: 0
+              transaction_month_11:
+                type: integer
+                description: Transação no mês 11
+                example: 0
+              transaction_month_12:
+                type: integer
+                description: Transação no mês 12
+                example: 0
+              transaction_period_Madrugada:
+                type: integer
+                description: Transação durante a madrugada
+                example: 1
+              transaction_period_Manhã:
+                type: integer
+                description: Transação durante a manhã
+                example: 0
+              transaction_period_Noite:
+                type: integer
+                description: Transação durante a noite
+                example: 0
+              transaction_period_Tarde:
+                type: integer
+                description: Transação durante a tarde
+                example: 0
+    responses:
+      200:
+        description: Detecção de fraude bem-sucedida
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              id_transacao:
+                type: integer
+              amt:
+                type: number
+                format: float
+              categoria_fraudulenta:
+                type: boolean
+                description: Indicação de fraude
+                example: true
+      400:
+        description: Erro de validação
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              example: "A requisição precisa conter um JSON"
+      500:
+        description: Erro interno do servidor
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              example: "Erro interno ao processar a detecção de fraude"

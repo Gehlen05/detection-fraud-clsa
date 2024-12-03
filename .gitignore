@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+.venv/
+.idea/
+src/api/v1/__*/
+#makefile
+__pycache__/
+venv
+.env
